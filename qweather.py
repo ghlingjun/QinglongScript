@@ -42,26 +42,46 @@ else:
 
 #汇总信息
 info = f"""
+大家好，我是XXX，今天的天气播报员。
+今天是【{weatherd[0]['fxDate']}】，天气 {weatherd[0]['textDay']}，{weatherd[0]['windDirDay']}，最低气温 {weatherd[0]['tempMin']}°C，最高气温 {weatherd[0]['tempMax']}°C。
+{weatheri[0]['text']}
+{tip}
+--------------------
+【紫外线指数】{weatheri[1]['text']}
+【花粉过敏指数】{weatheri[2]['text']}
+【晾晒指数】{weatheri[4]['text']}
+--------------------
 【预测】{weatherm}
 【实时天气】
 {weather['text']}，{weather['windDir']} {weather['windScale']} 级
 温度：{weather['temp']}°C，体感温度：{weather['feelsLike']}°C
-大家好，今天的天气播报员。
-今天 {weatherd[0]['textDay']}，最低气温 {weatherd[0]['tempMin']}°C，最高气温 {weatherd[0]['tempMax']}，{weatherd[0]['windDirDay']}，{weatheri[0]['text']}
-【紫外线指数】{weatheri[1]['text']}
-【花粉过敏指数】{weatheri[2]['text']}
-【晾晒指数】{weatheri[4]['text']}
-{tip}
-【未来 6 天的天气】
-【{weatherd[1]['fxDate']}】{weatherd[1]['textDay']}，{weatherd[1]['tempMin']}-{weatherd[1]['tempMax']}°C，{weatherd[1]['windDirDay']}
-【{weatherd[2]['fxDate']}】{weatherd[2]['textDay']}，{weatherd[2]['tempMin']}-{weatherd[2]['tempMax']}°C，{weatherd[2]['windDirDay']}
-【{weatherd[3]['fxDate']}】{weatherd[3]['textDay']}，{weatherd[3]['tempMin']}-{weatherd[3]['tempMax']}°C，{weatherd[3]['windDirDay']}
-【{weatherd[4]['fxDate']}】{weatherd[4]['textDay']}，{weatherd[4]['tempMin']}-{weatherd[4]['tempMax']}°C，{weatherd[4]['windDirDay']}
-【{weatherd[5]['fxDate']}】{weatherd[5]['textDay']}，{weatherd[5]['tempMin']}-{weatherd[5]['tempMax']}°C，{weatherd[5]['windDirDay']}
-【{weatherd[6]['fxDate']}】{weatherd[6]['textDay']}，{weatherd[6]['tempMin']}-{weatherd[6]['tempMax']}°C，{weatherd[6]['windDirDay']}
 【详细天气信息】
 {fxLink}"""
 
 infot = f"""{weather['obsTime']}"""
 
 notify.send(infot, info)
+
+#湿度：{weather['humidity']}%
+#能见度：{weather['vis']}KM
+#化妆指数：{weatheri[3]['text']}
+#防晒指数：{weatheri[5]['text']}
+
+#{weatherd[0]['moonPhase']};
+#{weatherd[1]['moonPhase']};
+#{weatherd[2]['moonPhase']};
+#{weatherd[3]['moonPhase']};
+#{weatherd[4]['moonPhase']};
+#{weatherd[5]['moonPhase']};
+#{weatherd[6]['moonPhase']};
+
+#【{weatherd[0]['fxDate']}】{weatherd[0]['textDay']}，{weatherd[0]['tempMin']}-{weatherd[0]['tempMax']}°C，{weatherd[0]['windDirDay']}
+
+
+#【未来 6 天的天气】
+#【{weatherd[1]['fxDate']}】{weatherd[1]['textDay']}，{weatherd[1]['tempMin']}-{weatherd[1]['tempMax']}°C，{weatherd[1]['windDirDay']}
+#【{weatherd[2]['fxDate']}】{weatherd[2]['textDay']}，{weatherd[2]['tempMin']}-{weatherd[2]['tempMax']}°C，{weatherd[2]['windDirDay']}
+#【{weatherd[3]['fxDate']}】{weatherd[3]['textDay']}，{weatherd[3]['tempMin']}-{weatherd[3]['tempMax']}°C，{weatherd[3]['windDirDay']}
+#【{weatherd[4]['fxDate']}】{weatherd[4]['textDay']}，{weatherd[4]['tempMin']}-{weatherd[4]['tempMax']}°C，{weatherd[4]['windDirDay']}
+#【{weatherd[5]['fxDate']}】{weatherd[5]['textDay']}，{weatherd[5]['tempMin']}-{weatherd[5]['tempMax']}°C，{weatherd[5]['windDirDay']}
+#【{weatherd[6]['fxDate']}】{weatherd[6]['textDay']}，{weatherd[6]['tempMin']}-{weatherd[6]['tempMax']}°C，{weatherd[6]['windDirDay']}
